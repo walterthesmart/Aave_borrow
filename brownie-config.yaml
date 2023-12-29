@@ -1,0 +1,21 @@
+dependencies: 
+  - aave/protocol-v2@1.0.1
+compiler:
+  solc:
+    version: 0.6.12
+    remappings:
+      - '@aave=aave/protocol-v2@1.0.1'
+networks:
+  default: mainnet-fork
+  sepolia:
+    verify: True
+    weth_token: '0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9'
+    lending_pool_addresses_provider: '0x012bAC54348C0E635dCAc9D5FB99f06F24136C9A'
+    dai_eth_price_feed: '0x14866185B1962B63C3Ea9E03Bc1da838bab34C19'
+  mainnet-fork-dev:
+    weth_token: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'
+    lending_pool_addresses_provider: '0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5'
+    dai_eth_price_feed: '0x773616e4d11a78f511299002da57a0a94577f1f4'
+wallets:
+  from_key: ${PRIVATE_KEY}
+dotenv: .env
